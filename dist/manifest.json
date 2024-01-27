@@ -1,0 +1,112 @@
+{
+    // @link https://developer.chrome.com/docs/extensions/mv2/manifest/
+    // @link https://developer.chrome.com/docs/extensions/mv2/declare_permissions/
+
+    "manifest_version": 2,
+    "name": "Force My Browser Fonts",
+    "version": "1.0.2",
+    "description": "A Chrome extension that forces websites to substitute the fonts you choose for serif, sans-serif and monospace, while trying not to break icon fonts",
+    "icons": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "64": "icon.png",
+        "128": "icon.png"
+    },
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"], // @link https://stackoverflow.com/a/4030966
+        "exclude_matches": [
+            "*://*.example.com/*",
+            "*://*.example.org/*"
+        ],
+        "run_at": "document_end", // Default = document_idle, document_end speeds up rendering, document_start fails on many sites
+        "all_frames": true,
+        "match_about_blank": true,
+        "js": [
+            "contentScript.js"
+        ]
+    }],
+    // Keep for reference
+    "content_security_policy": "default-src 'self'; script-src 'self'; style-src *; img-src *; font-src *; connect-src *; media-src *; object-src 'self'; prefetch-src *; child-src *; frame-src *; worker-src *; frame-ancestors *; form-action *",
+    "permissions": [
+        "http://*/*", // Not required
+        "https://*/*", // Not required
+        "activeTab", // Not required
+        "tabs" // Not required
+
+        // Reference all permissions
+
+        // "*://*/*",
+        // "http://*/*",
+        // "https://*/*",
+        // "activeTab", // Required by "content_scripts"
+        // "alarms",
+        // "background",
+        // "bookmarks",
+        // "browsingData",
+        // "certificateProvider", // Not allowed for specified platform
+        // "clipboardRead",
+        // "clipboardWrite",
+        // "contentSettings",
+        // "contextMenus",
+        // "cookies",
+        // "debugger",
+        // "declarativeContent",
+        // "declarativeNetRequest",
+        // "declarativeNetRequestFeedback",
+        // "declarativeWebRequest",
+        // "desktopCapture",
+        // "documentScan", // Not allowed for specified platform
+        // "downloads",
+        // "enterprise.deviceAttributes", // Not allowed for specified platform
+        // "enterprise.hardwarePlatform", // Not allowed for specified install location
+        // "enterprise.networkingAttributes", // Not allowed for specified platform
+        // "enterprise.platformKeys", // Not allowed for specified platform
+        // "experimental", // Requires the 'experimental-extension-apis' command line switch to be enabled
+        // "fileBrowserHandler", // Not allowed for specified platform
+        // "fileSystemProvider", // Not allowed for specified platform
+        // "fontSettings",
+        // "gcm",
+        // "geolocation",
+        // "history",
+        // "identity",
+        // "idle",
+        // "loginState", // Not allowed for specified platform
+        // "management",
+        // "nativeMessaging",
+        // "notifications",
+        // "pageCapture",
+        // "platformKeys", // Not allowed for specified platform
+        // "power",
+        // "printerProvider",
+        // "printing", // Not allowed for specified platform
+        // "printingMetrics", // Not allowed for specified platform
+        // "privacy",
+        // "processes",
+        // "proxy",
+        // "scripting", // Requires manifest v3
+        // "search",
+        // "sessions",
+        // "signedInDevices",
+        // "storage",
+        // "system.cpu",
+        // "system.display",
+        // "system.memory",
+        // "system.storage",
+        // "tabCapture",
+        // "tabGroups", // Requires manifest v3
+        // "tabs",
+        // "topSites",
+        // "tts",
+        // "ttsEngine",
+        // "unlimitedStorage",
+        // "vpnProvider", // Not allowed for specified platform
+        // "wallpaper", // Not allowed for specified platform
+        // "webNavigation",
+        // "webRequest", // Not allowed for specified platform
+        // "webRequestBlocking"
+    ]
+}
