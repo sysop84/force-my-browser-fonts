@@ -1,6 +1,9 @@
 /*
-- Link elm href: https://cdn.jsdelivr.net/gh/username/full-repo-name@main/crossorigin.css
-- CORS tester: https://cors-test.codehappy.dev/
-- Note: For accurate testing from extension context, do not include crossorigin="anonymous" on the link elm
+# CROSSORIGIN TESTING
+
+- Create file on github: crossorigin.css
+- Link element href: https://cdn.jsdelivr.net/gh/username/full-repo-name@main/crossorigin.css
+- Cors tester: https://cors-test.codehappy.dev/
+- Note: For accurate testing from extension context, do not include crossorigin="anonymous" on the link element
 */
 .crossorigin { font-family: Arial, serif; }
