@@ -1,11 +1,11 @@
 .link-element-cors { font-family: cursive; }
 
 @font-face {
-    font-family: "Unknown Ico Font CORS (FA)";
+    font-family: "TestCorsIcoFont";
     src: url("https://cdn.jsdelivr.net/gh/sysop84/force-my-browser-fonts@latest/font-fa-solid-900.woff2") format("woff2");
 }
 .icon-unknown-fa-split-separate-cors {
-    font-family: "Unknown Ico Font CORS (FA)" !important;
+    font-family: "TestCorsIcoFont" !important;
 }
 .icon-unknown-fa-split-separate-cors::before {
     content: "\f013";
