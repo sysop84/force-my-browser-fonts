@@ -1,5 +1,9 @@
 .link-element-cors { font-family: cursive; }
 
+@font-face {
+    font-family: "Unknown Ico Font CORS (FA)";
+    src: url("https://cdn.jsdelivr.net/gh/sysop84/force-my-browser-fonts@main/font-fa-solid-900.woff2") format("woff2");
+}
 .icon-unknown-fa-split-separate-cors {
     font-family: "Unknown Ico Font (FA)" !important;
 }
